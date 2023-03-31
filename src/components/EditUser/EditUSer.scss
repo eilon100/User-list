@@ -1,0 +1,15 @@
+.Edit_user_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  h1 {
+    font-size: 5 larger;
+  }
+}
+.Edit_user_textfield {
+  width: 70%;
+}
