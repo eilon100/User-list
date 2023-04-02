@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Button } from "@mui/material";
 import EditUser from "../EditUser/EditUser";
-import ModalContainer from "../../UI/Modal/Container/ModalContainer";
+import ModalContainer from "../../UI/Modal/ModalContainer";
 import useUserDate from "../../utils/hooks/useUserData";
 
 function AddUser() {
@@ -26,6 +26,7 @@ function AddUser() {
         <EditUser textField={textField} action="add" />
       </ModalContainer>
       <Button
+        variant="contained"
         onClick={() => {
           setIsModalOpen(true);
         }}

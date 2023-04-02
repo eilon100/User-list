@@ -26,7 +26,7 @@ function ModalContainer({
     <Button
       variant="text"
       type="reset"
-      id="Delete_container_cancel_button"
+      id="Modal_cancel_button"
       onClick={onClose}
     >
       cancel

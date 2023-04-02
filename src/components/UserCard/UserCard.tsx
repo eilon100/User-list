@@ -1,6 +1,6 @@
 import DeleteUser from "../DeleteUser/DeleteUser";
 import EditUser from "../EditUser/EditUser";
-import ModalContainer from "../../UI/Modal/Container/ModalContainer";
+import ModalContainer from "../../UI/Modal/ModalContainer";
 import { User } from "../../interface/user";
 import useDeleteUser from "../../utils/hooks/useDeleteUser";
 import { useState } from "react";
@@ -47,7 +47,7 @@ function UserCard({
       onClose={onClose}
       onClick={editUser}
       mainButton="Edit"
-      mainButtonStyle="modal_container_edit_button"
+      mainButtonStyle="Modal_add_button"
     >
       <EditUser textField={textField} action={EDIT} />
     </ModalContainer>
@@ -59,7 +59,7 @@ function UserCard({
       onClose={onClose}
       onClick={deleteUser}
       mainButton="Delete"
-      mainButtonStyle="modal_container_delete_button"
+      mainButtonStyle="Modal_delete_button"
     >
       <DeleteUser />
     </ModalContainer>
@@ -73,7 +73,7 @@ function UserCard({
     return deleteModal;
   };
 
-  const openModalFunction = (action: actions) => {
+  const openModal = (action: actions) => {
     setButtonPressed(action);
     setIsModalOpen(true);
   };
@@ -90,34 +90,34 @@ function UserCard({
         </div>
         <div className="User_card_body">
           <div>
-            <MdEmail />
-            {email}
+            <MdEmail className="User_card_icon" />
+            <p>{email}</p>
           </div>
           <div>
-            <MdLocationOn />
-            {country}
+            <MdLocationOn className="User_card_icon" />
+            <p> {country}</p>
           </div>
           <div>
-            <MdOutlineLocationCity />
-            {city}
+            <MdOutlineLocationCity className="User_card_icon" />
+            <p>{city}</p>
           </div>
           <div>
-            <MdHome />
-            {streetName}
+            <MdHome className="User_card_icon" />
+            <p>{streetName}</p>
           </div>
         </div>
         <div className="User_card_buttons">
           <Button
             variant="contained"
             id="User_card_edit_button"
-            onClick={() => openModalFunction(EDIT)}
+            onClick={() => openModal(EDIT)}
           >
             edit
           </Button>
           <Button
             variant="contained"
             id="User_card_delete_button"
-            onClick={() => openModalFunction(DELETE)}
+            onClick={() => openModal(DELETE)}
           >
             delete
           </Button>

@@ -1,7 +1,6 @@
 import * as yup from "yup";
 import { User } from "../../interface/user";
 
-
 export const EditUserValidation = (users: User[]) => {
   return yup.object({
     title: yup.string().required("Title is required"),
@@ -16,7 +15,6 @@ export const EditUserValidation = (users: User[]) => {
     city: yup.string().required("city is required"),
     country: yup.string().required("country is required"),
     streetName: yup.string().required("streetName is required"),
-    streetNumber: yup.number().required("streetNumber is required"),
     email: yup
       .string()
       .required("email is required")

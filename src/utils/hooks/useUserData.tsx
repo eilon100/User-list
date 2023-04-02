@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { EditUserValidation } from "../validation/editUserValidation";
 import { TextField } from "@mui/material";
 import { actions } from "../../interface/actions";
 import { initialState } from "../../Redux/Reducer";
 import { toast } from "react-hot-toast";
 import { useFormik } from "formik";
 import { useState } from "react";
+import { EditUserValidation } from "../validation/EditUserValidation";
 
 type initialValues = {
   [key: string]: string;
@@ -20,7 +20,6 @@ const textFields = [
   { name: "city", type: "text", label: "city" },
   { name: "country", type: "text", label: "country" },
   { name: "streetName", type: "string", label: "streetName" },
-  { name: "streetNumber", type: "number", label: "streetNumber" },
 ];
 
 type useEditUserProps = {
@@ -99,6 +98,7 @@ function useUserDate({ id, onClose, action }: useEditUserProps) {
   };
 
   const submitFunction = () => {
+    
     const userValues = {
       email: values.email,
       name: {
@@ -110,7 +110,6 @@ function useUserDate({ id, onClose, action }: useEditUserProps) {
         country: values.country,
         city: values.city,
         streetName: values.streetName,
-        streetNumber: values.streetNumber,
       },
       ...(actionIsAdd && {
         image: userImage,

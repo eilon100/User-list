@@ -1,8 +1,11 @@
 import AddUser from "../AddUser/AddUser";
 import UserList from "../UserList/UserList";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./UserLibrary.scss";
+import SearchUsers from "../SearchUsers/SearchUsers";
+import { searchState } from "../../interface/search";
+
 type expectResponse = {
   name: { title: string; first: string; last: string };
   location: {
@@ -16,6 +19,10 @@ type expectResponse = {
 
 const UserLibrary = () => {
   const dispatch = useDispatch();
+  const [search, setSearch] = useState<searchState>({
+    search: "",
+    filter: "all",
+  });
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -28,7 +35,7 @@ const UserLibrary = () => {
           location: {
             country,
             city,
-            street: { name: streetName, streetNumber },
+            street: { name: streetName },
           },
           email,
           picture: { medium: image },
@@ -50,8 +57,9 @@ const UserLibrary = () => {
   return (
     <div className="Main_container">
       <h1>User List</h1>
+      <SearchUsers search={search} setSearch={setSearch} />
       <AddUser />
-      <UserList />
+      <UserList search={search} />
     </div>
   );
 };

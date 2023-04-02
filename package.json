@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/mime": "^3.0.1",
     "sass": "^1.60.0"
   }
 }

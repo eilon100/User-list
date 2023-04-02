@@ -32,14 +32,13 @@
   margin-top: 1rem;
 }
 
-#Delete_container_cancel_button {
+#Modal_cancel_button {
   color: black;
 }
 
-#modal_container_delete_button {
-  background-color: rgb(239 68 68);
+#Modal_add_button {
+  background-color: var(--primary-color);
 }
-
-#modal_container_edit_button {
-  background-color: rgb(68, 117, 239);
+#Modal_delete_button {
+  background-color: var(--secondary-color);
 }
