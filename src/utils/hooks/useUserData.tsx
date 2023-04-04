@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import { TextField } from "@mui/material";
-import { actions } from "../../interface/actions";
+import { Actions } from "../../interface/actions";
 import { initialState } from "../../Redux/Reducer";
 import { toast } from "react-hot-toast";
 import { useFormik } from "formik";
@@ -25,7 +25,7 @@ const textFields = [
 type useEditUserProps = {
   id?: string;
   onClose: () => void;
-  action: actions;
+  action: Actions;
 };
 
 function useUserDate({ id, onClose, action }: useEditUserProps) {
@@ -98,7 +98,6 @@ function useUserDate({ id, onClose, action }: useEditUserProps) {
   };
 
   const submitFunction = () => {
-    
     const userValues = {
       email: values.email,
       name: {

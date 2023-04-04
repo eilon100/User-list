@@ -5,9 +5,9 @@ import { initialState } from "../../Redux/Reducer";
 import { useSelector } from "react-redux";
 import "./UserList.scss";
 import useSearchUsers from "../SearchUsers/hooks/useSearchUsers";
-import { searchState } from "../../interface/search";
+import { SearchState } from "../../interface/searchState";
 
-const UserList = ({ searchData }: { searchData: searchState }) => {
+const UserList = ({ searchData }: { searchData: SearchState }) => {
   const { users } = useSelector((state: initialState) => state);
 
   const [filteredList] = useSearchUsers({ ...searchData });

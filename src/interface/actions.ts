@@ -1,1 +1,1 @@
-export type actions = "add" | "edit";
+export type Actions = "add" | "edit";

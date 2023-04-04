@@ -1,11 +1,11 @@
 import { MenuItem, Select, TextField } from "@mui/material";
 import React, { Dispatch } from "react";
-import { searchState } from "../../interface/search";
+import { SearchState } from "../../interface/searchState";
 import "./SearchUsers.scss";
 
 interface searchUsersProps {
-  search: searchState;
-  setSearch: Dispatch<React.SetStateAction<searchState>>;
+  search: SearchState;
+  setSearch: Dispatch<React.SetStateAction<SearchState>>;
 }
 
 function SearchUsers({ search, setSearch }: searchUsersProps) {
@@ -29,7 +29,7 @@ function SearchUsers({ search, setSearch }: searchUsersProps) {
         onChange={(event) =>
           setSearch((prev) => ({
             ...prev,
-            filter: event.target.value as searchState["filter"],
+            filter: event.target.value as SearchState["filter"],
           }))
         }
       >

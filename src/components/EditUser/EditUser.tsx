@@ -1,10 +1,9 @@
+import { Actions } from "../../interface/actions";
 import "./EditUSer.scss";
-
-import { actions } from "../../interface/actions";
 
 type DeleteUserProps = {
   textField: () => JSX.Element;
-  action: actions;
+  action: Actions;
 };
 
 function EditUser({ textField, action }: DeleteUserProps) {

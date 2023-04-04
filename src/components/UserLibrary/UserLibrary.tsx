@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import "./UserLibrary.scss";
 import SearchUsers from "../SearchUsers/SearchUsers";
-import { searchState } from "../../interface/search";
+import { SearchState } from "../../interface/searchState";
 
 type expectResponse = {
   name: { title: string; first: string; last: string };
@@ -19,7 +19,7 @@ type expectResponse = {
 
 const UserLibrary = () => {
   const dispatch = useDispatch();
-  const [search, setSearch] = useState<searchState>({
+  const [search, setSearch] = useState<SearchState>({
     search: "",
     filter: "all",
   });
