@@ -2,7 +2,7 @@ import DeleteUser from "../DeleteUser/DeleteUser";
 import EditUser from "../EditUser/EditUser";
 import ModalContainer from "../../UI/Modal/ModalContainer";
 import { User } from "../../interface/user";
-import useDeleteUser from "../../utils/hooks/useDeleteUser";
+import useDeleteUser from "../DeleteUser/hooks/useDeleteUser";
 import { useState } from "react";
 import useUserDate from "../../utils/hooks/useUserData";
 import "./UserCard.scss";

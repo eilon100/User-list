@@ -59,7 +59,7 @@ const UserLibrary = () => {
       <h1>User List</h1>
       <SearchUsers search={search} setSearch={setSearch} />
       <AddUser />
-      <UserList search={search} />
+      <UserList searchData={search} />
     </div>
   );
 };

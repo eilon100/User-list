@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import { initialState } from "../../Redux/Reducer";
+import { searchState } from "../../../interface/search";
+import { initialState } from "../../../Redux/Reducer";
 
-function useSearchUsers({ search: { filter, search } }: any) {
+function useSearchUsers({ filter, search }: searchState) {
   const { users } = useSelector((state: initialState) => state);
   const filterLocation = filter === "location";
   const filterEmail = filter === "email";

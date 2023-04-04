@@ -18,9 +18,7 @@ function SearchUsers({ search, setSearch }: searchUsersProps) {
         type="text"
         variant="outlined"
         onChange={(event) =>
-          setSearch((prev) => {
-            return { ...prev, search: event.target.value };
-          })
+          setSearch((prev) => ({ ...prev, search: event.target.value }))
         }
         value={search.search}
       />
@@ -29,9 +27,10 @@ function SearchUsers({ search, setSearch }: searchUsersProps) {
         className="Search_users_select"
         value={search.filter}
         onChange={(event) =>
-          setSearch((prev: any) => {
-            return { ...prev, filter: event.target.value };
-          })
+          setSearch((prev) => ({
+            ...prev,
+            filter: event.target.value as searchState["filter"],
+          }))
         }
       >
         <MenuItem value="all">All</MenuItem>

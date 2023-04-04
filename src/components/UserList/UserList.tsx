@@ -4,11 +4,13 @@ import UserCard from "../UserCard/UserCard";
 import { initialState } from "../../Redux/Reducer";
 import { useSelector } from "react-redux";
 import "./UserList.scss";
-import useSearchUsers from "../../utils/hooks/useSearchUsers";
-const UserList = ({ search }: any) => {
+import useSearchUsers from "../SearchUsers/hooks/useSearchUsers";
+import { searchState } from "../../interface/search";
+
+const UserList = ({ searchData }: { searchData: searchState }) => {
   const { users } = useSelector((state: initialState) => state);
 
-  const [filteredList] = useSearchUsers({ search });
+  const [filteredList] = useSearchUsers({ ...searchData });
 
   if (users.length === 0) return <div>No users</div>;
 
